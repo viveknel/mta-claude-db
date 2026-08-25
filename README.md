@@ -15,18 +15,24 @@ on top for questions that span multiple books.
 | Mage: The Ascension 20th Anniversary Edition (core rulebook) | `m20-core/` | 698 |
 | Mage 20: How Do You DO That? — A Practical Guide to Sphere Magick | `m20-how-do-you-do-that/` | 143 |
 
-**Classic-era line** (pre-M20, Renaissance-setting, 1998):
+**Classic era, 2nd Edition line** (Renaissance-setting, 1998):
 
 | Book | Folder | Pages |
 |---|---|---|
 | Mage: The Sorcerers Crusade | `mage-sorcerers-crusade/` | 317 |
+
+**Classic era, Revised Edition line** (modern-day "Final Nights," 2004):
+
+| Book | Folder | Pages |
+|---|---|---|
+| Blood Treachery | `blood-treachery/` | 96 |
 
 ```
 .
 ├── README.md                       ← you are here
 ├── library_index.md                 ← cross-book synthesis (read for broad/comparative questions)
 ├── scripts/
-│   └── query_library.py             ← search all three books' databases at once
+│   └── query_library.py             ← search all four books' databases at once
 ├── m20-core/
 │   ├── book_index.md                ← thematic index (read this for broad questions about this book)
 │   ├── book_chunks.db               ← full-text search database
@@ -39,7 +45,13 @@ on top for questions that span multiple books.
 │   ├── README.md
 │   └── scripts/
 │       └── query_chunks.py
-└── mage-sorcerers-crusade/
+├── mage-sorcerers-crusade/
+│   ├── book_index.md
+│   ├── book_chunks.db
+│   ├── README.md
+│   └── scripts/
+│       └── query_chunks.py
+└── blood-treachery/
     ├── book_index.md
     ├── book_chunks.db
     ├── README.md
@@ -53,69 +65,73 @@ README explaining how.
 
 ## Before you use this library — read this first
 
-This library spans **two distinct editions/eras**, not one continuous
-canon:
+This library spans **three distinct editions/eras**, not one
+continuous canon:
 
 - `m20-core` and `m20-how-do-you-do-that` are the **M20 line** —
   modern-day-set, 2015-2016, and `m20-how-do-you-do-that` is an
-  explicit, subordinate rules companion to `m20-core` (same author,
-  same rules edition, no independent lore of its own).
-- `mage-sorcerers-crusade` is a **classic-era, pre-M20 book from
+  explicit, subordinate rules companion to `m20-core`.
+- `mage-sorcerers-crusade` is a **classic-era, 2nd Edition book from
   1998**, set roughly 500 years earlier in the same fictional world
-  (Renaissance Europe) — Mage's counterpart to Vampire: The Dark Ages.
-  It is fully standalone and playable on its own, and it is **not**
-  mechanically or terminologically identical to the M20 books, even
-  though the two eras share real history, several named characters,
-  and a surprising number of direct textual echoes.
+  (Renaissance Europe) — fully standalone.
+- `blood-treachery` is a **classic-era, Revised Edition book from
+  2004**, set in essentially the *same modern-day period* `m20-core`
+  itself describes — but written 11 years earlier, when that period's
+  metaplot was still being treated as fixed, ongoing continuity
+  rather than the optional retrospective M20 later made it.
 
-See `library_index.md` for the full picture — it documents both the
+See `library_index.md` for the full picture — it documents both
 genuine connections (a named character who appears young in one book
-and dies centuries later in another; exact matching founding dates for
-the Order of Hermes and the Technocracy's predecessor; the literal
-origin of the "Future Fates" mechanic) and the genuine differences
-(the Council of Nine's membership changes over the centuries; the
-Scourge and Paradox are different game mechanics serving the same
-narrative role; Avatar Essence types don't use the same taxonomy)
-rather than smoothing either over.
+and dies decades later in another, confirmed across all three
+narrative books; the exact same "Massasa War" referenced by name 800
+years apart; the literal origin of the "Future Fates" mechanic) and
+genuine differences (a Solificati/Children of Knowledge plot
+development in `blood-treachery` that `m20-core`'s own later
+retrospective doesn't carry forward; the Scourge and Paradox are
+different game mechanics; Avatar Essence types don't share a
+taxonomy) rather than smoothing any of it over.
 
 ## Quick start
 
 **Broad or thematic question about a single book** ("what does M20 say
-about the Nephandi", "how was the Council of Nine founded") — read
-that book's own `book_index.md` directly; it's small enough to load in
-full and answers most questions without any querying.
+about the Nephandi", "how does the Wizards' March get declared") —
+read that book's own `book_index.md` directly; it's small enough to
+load in full and answers most questions without any querying.
 
-**Question that spans eras or books** ("is Ahl-i-Batin a Tradition or
-a Disparate Craft", "how did the Technocracy's Conventions change over
-time") — read `library_index.md` first; it's built specifically for
-this and will often tell you the answer depends on which century you
-mean.
+**Question that spans eras or books** ("is Solificati a House of the
+Order or a Disparate Craft", "what happened to Porthos Fitz-Empress
+across the setting's history") — read `library_index.md` first; it's
+built specifically for this and will often tell you the answer
+depends on which book's continuity you mean.
 
 **Exact quote, precise fact, or page-number lookup within one book** —
 query that book's chunk database directly:
 
 ```bash
 python3 m20-core/scripts/query_chunks.py m20-core/book_chunks.db "Doissetep"
-python3 mage-sorcerers-crusade/scripts/query_chunks.py mage-sorcerers-crusade/book_chunks.db "Convocation"
+python3 blood-treachery/scripts/query_chunks.py blood-treachery/book_chunks.db "Wizards' March"
 ```
 
 **Search across multiple books at once**:
 
 ```bash
-python3 scripts/query_library.py m20-core/book_chunks.db mage-sorcerers-crusade/book_chunks.db "search terms"
+python3 scripts/query_library.py m20-core/book_chunks.db blood-treachery/book_chunks.db "search terms"
 ```
 
 Full-text search (all scripts) supports phrase queries (`"exact
 phrase"`), boolean operators (`term1 AND term2`, `term1 NOT term2`),
-and prefix matching (`term*`).
+and prefix matching (`term*`). Hyphens and apostrophes in unquoted
+multi-word queries can trigger an FTS5 syntax error (e.g.
+`Fitz-Empress`, `Wizards' March`) — if that happens, drop the
+punctuation or wrap the phrase in escaped double quotes and retry.
 
-**Note on page numbers:** all three books' PDFs have front-matter
-offsets between the PDF's own page count and the book's printed page
-footers (a small +1 offset for the two M20 books, a larger +19 offset
-for `mage-sorcerers-crusade`, which opens with an unnumbered 16-page
-fiction Prelude). See each book's own README.md for the exact offset —
-this matters if you're cross-referencing against a physical/PDF copy
-rather than just this bundle.
+**Note on page numbers:** every book's PDF has a small front-matter
+offset between the PDF's own page count and the book's printed page
+footers (+1 for `m20-core`, `m20-how-do-you-do-that`, and
+`blood-treachery`; +19 for `mage-sorcerers-crusade`, which opens with
+an unnumbered 16-page fiction Prelude). See each book's own README.md
+for its exact offset — this matters if you're cross-referencing
+against a physical/PDF copy rather than just this bundle.
 
 ## Requirements
 
@@ -129,10 +145,10 @@ extra packages to install).
   It's a research aid for someone who already owns the source PDFs,
   not a substitute for them.
 - Mechanically dense sections (character creation Traits, dice-pool
-  rules, combat systems, spellcasting systems) are noted as reference
-  material in each book's own `book_index.md` rather than summarized
-  rule-by-rule — query the relevant `book_chunks.db` directly for that
-  content.
+  rules, combat systems, spellcasting systems, ghoul-mage rules) are
+  noted as reference material in each book's own `book_index.md`
+  rather than summarized rule-by-rule — query the relevant
+  `book_chunks.db` directly for that content.
 
 ## Adding another related book later
 

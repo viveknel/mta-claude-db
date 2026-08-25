@@ -7,232 +7,227 @@ published 2015-2016):
 - `m20-core/` — Mage: The Ascension 20th Anniversary Edition (core rulebook), 698 pages
 - `m20-how-do-you-do-that/` — Mage 20: How Do You DO That? — A Practical Guide to Sphere Magick, 143 pages
 
-**Classic-era line** (original, pre-M20, published 1998):
+**Classic-era, 2nd Edition line** (Renaissance-setting, published 1998):
 - `mage-sorcerers-crusade/` — Mage: The Sorcerers Crusade, 317 pages
 
+**Classic-era, Revised Edition line** (modern-day "Final Nights"
+metaplot, published 2004):
+- `blood-treachery/` — Blood Treachery, 96 pages
+
 ## How to use this file
-This file synthesizes themes across the three books above. For
+This file synthesizes themes across the four books above. For
 details on any single book, read that book's own `book_index.md` in
 its subdirectory. For exact quotes/facts, query that book's
 `book_chunks.db`, or use `scripts/query_library.py` to search across
-all three databases at once (see usage below).
+all four databases at once (see usage below).
 
 ## A note on editions — read this before cross-referencing
 
-This library spans **two distinct editions/eras** of *Mage: The
-Ascension*, and they are not simply the same continuity at different
-dates — they're separate publication lines, written 17 years apart,
-describing different centuries of the same fictional history.
+This library spans **three distinct editions/eras** of *Mage: The
+Ascension*, not one continuous canon:
 
-1. **M20** (`m20-core`, `m20-how-do-you-do-that`) is a 2015-2016
+1. **M20** (`m20-core`, `m20-how-do-you-do-that`) — a 2015-2016
    *20th Anniversary retrospective* line: a consolidated, updated
-   synthesis of modern-day (present-day-set) Mage, aimed at both new
-   and returning players. `m20-how-do-you-do-that` is an explicit,
-   subordinate rules companion to `m20-core` by the same author — see
-   below.
-2. **Mage: The Sorcerers Crusade** (`mage-sorcerers-crusade`) is a
-   *classic-era, pre-M20* sourcebook from 1998, synced to the 1996
-   Second Edition ruleset — not an M20 product at all. It's a
-   standalone, playable-on-its-own core rulebook set roughly 500 years
-   *before* `m20-core`'s modern setting (Renaissance Europe, c.
-   1400s-1500s), functioning as Mage's counterpart to Vampire: The
-   Dark Ages — the same setting's own deep past, not a competing
-   version of the present.
+   synthesis of modern-day Mage. `m20-how-do-you-do-that` is an
+   explicit, subordinate rules companion to `m20-core`.
+2. **Classic, 2nd Edition** (`mage-sorcerers-crusade`) — a 1998
+   *prequel* sourcebook set roughly 500 years before the modern
+   setting (Renaissance Europe), synced to the 1996 Second Edition
+   ruleset. Standalone and playable on its own.
+3. **Classic, Revised Edition** (`blood-treachery`) — a 2004
+   sourcebook set in the *same modern-day period* `m20-core` itself
+   describes (post-Doissetep, pre-Time-of-Judgment "Final Nights"),
+   synced to the 2000 Revised ruleset — 11 years *before* M20 existed,
+   telling its own version of that period's metaplot.
 
-**Practical implication:** `mage-sorcerers-crusade` and `m20-core`
-describe the *same* fictional world centuries apart, written by
-overlapping creative teams (Phil Brucato leads both) who deliberately
-carried specific names, dates, and even individual characters forward
-across that gap — several of which are genuinely remarkable and
-verified below. But they are not mechanically or terminologically
-identical: the further into a topic's specific rules or faction
-roster you go, the more you should expect real, documented divergence
-rather than assume seamless continuity. Where the two disagree, that's
-usually because roughly 500 in-fiction years and 17 real-world years
-of design evolution sit between them — not an error in either book.
+**Practical implication:** `blood-treachery` and `m20-core` are the
+closest pair in this library — same in-fiction period, same core
+mechanics (Paradox, Quintessence, the Nine Spheres essentially
+unchanged), largely the same underlying design lineage. But
+`blood-treachery` is a *contemporary* account written when its
+events were being treated as fixed, ongoing continuity, while
+`m20-core` is a *later retrospective* written specifically to make
+that same era's metaplot optional (see "Points of disagreement"
+below for a concrete case where M20 quietly did not carry a
+Revised-era development forward). `mage-sorcerers-crusade` sits apart
+from both — a different century, a different core punishment
+mechanic (the Scourge, not Paradox), and a genuinely different
+Council-of-Nine roster, but the same deep-history setting all three
+other books ultimately point back to.
 
 ## Cross-cutting themes
 
-### Pride and consequence as the constant, across 500 years and two very different punishment mechanics
-- **m20-core** frames pride/hubris as its explicit central thesis (see
-  its own Cross-cutting themes) and mechanizes magickal overreach
-  through **Paradox** — a reality-consensus backlash tied to how
-  blatantly a mage's act violates the Masses' belief in what's
-  possible (Ch. 2, p.56-65).
-- **mage-sorcerers-crusade** tells the *identical* moral story — magick
-  as a burden that punishes the proud — through **the Scourge** (Ch. I,
-  p.42; full system Ch. VIII, p.232-237), but the mechanism is
-  explicitly Divine/moral rather than consensus-based: Boons and Banes
-  are keyed directly to Christian Cardinal/Theological Virtues, Pagan
-  Virtues, and the Seven Deadly Sins, not to how "vulgar" an effect
-  looks to onlookers.
-- `m20-core` itself is aware of this lineage — its own Chapter Two
-  explicitly describes a historical Scourge that "once punished vain
-  magick before Paradox took over that role" (see `m20-core/book_index.md`).
-  Reading `mage-sorcerers-crusade` Ch. VIII is the only way to see that
-  predecessor system in its full, playable, mechanically distinct
-  form — it is a genuinely different game system serving the same
-  thematic role, not a simplified early draft of Paradox.
+### The Massasa War, told at both ends: origin and renewal
+- **mage-sorcerers-crusade** (Ch. II, p.53-54) documents the *first*
+  Massasa War's opening moves in its Convocation Period timeline:
+  House Tremere's betrayal of House Diedne, the 1201-1325 war of
+  attrition against the newly-undead House, and the 1210 Fall of
+  Mistridge — explicitly dated as "the official beginning of the
+  Ascension War" — caused in part by a Tremere-loyalist traitor
+  (Grimgroth) inside the besieged Covenant.
+- **blood-treachery** picks up the *same* named war roughly 800 years
+  later: its own "What Happened to House Tremere?" sidebar (p.55)
+  recaps the identical origin (Tremere's betrayal of House Diedne,
+  the founder's own transformation, the war's eventual quiet
+  stalemate) before telling the story of the war's violent renewal —
+  a second, modern-day **Wizards' March** formally declared against
+  House Tremere on January 21, 2000 (Act One, p.27).
+- The two books' figures for "how long ago" line up closely:
+  `mage-sorcerers-crusade` dates the war's start to ~1201-1210;
+  `blood-treachery`, writing from a ~2000 present, repeatedly says
+  "800 years" (Introduction, p.13; the Former Tremere character,
+  Act Two, p.38) — arithmetic that lands almost exactly on
+  `mage-sorcerers-crusade`'s own dates.
 
-### The Council of Nine's membership is not fixed across 500 years — it's a documented, dated turnover
-- **mage-sorcerers-crusade** (Ch. II, p.56) gives the Council's exact
-  1466 founding roster: Akashic Brotherhood, **Ahl-i-Batin**,
-  Chakravanti/Euthanatoi, Celestial Chorus, Dream-speakers, Order of
-  Hermes, Seers of Chronos/Sahajiya, **Solificati**, and Verbena — nine
-  seats, two of which (Ahl-i-Batin and Solificati) are held by groups
-  that `m20-core` lists only as **Disparate Crafts**, not Traditions
-  (see `m20-core/book_index.md`, Ch. 5 Part IV).
-- **m20-core**'s modern Nine swaps those same two seats for **Sons of
-  Ether** and **Virtual Adepts** — neither of which could have existed
-  in 1466: `mage-sorcerers-crusade` itself (Ch. V, p.142-143) narrates
-  their origin as 17th-century Order of Reason splinter groups
-  (Electrodyne Engineers and Difference Engineers) who defect to the
-  Council centuries later.
-- `mage-sorcerers-crusade` also tracks the Solificati's own exit in
-  real time: broken by internal betrayal in 1470, the last 12 members
-  rename themselves **the Children of Knowledge** in 1500 (Ch. II,
-  p.57) and refuse to rejoin the Council — which is exactly the
-  Disparate Craft `m20-core` describes under that same name (see
-  `m20-core/book_index.md`, Ch. 5 Part IV). Ahl-i-Batin's own path from
-  full Tradition to Disparate Craft isn't narrated in either book in
-  this library; treat it as an open thread rather than an error.
-- **Practical implication**: a question like "is Ahl-i-Batin a
-  Tradition or a Disparate Craft" has a *different correct answer
-  depending on the century* — check which book's timeframe the
-  question actually concerns before answering from just one source.
+### Mistridge: the Order's one shared trauma, invoked across all three modern/prequel books
+- **mage-sorcerers-crusade** establishes Mistridge as a major
+  Hermetic Covenant with a violent history (a Craftmason siege ending
+  in betrayal, Ch. I's Crays/Covenants table, Ch. II's Convocation
+  timeline) and as the site the Ascension War is dated from.
+- **blood-treachery** invokes it twice as a moral touchstone rather
+  than a place: a Former Tremere sparing a cornered Hermetic cabal
+  tells them to "save your Mistridge" (Act Two, p.40) as shorthand for
+  everything worth protecting, and the same figure's later monologue
+  (Act Three, p.52-53) reveals *he personally* destroyed Mistridge
+  eight centuries earlier, out of disgust with his own pride — using
+  the site's fall as his own cautionary example to the Order.
+- `m20-core` does not focus on Mistridge specifically, but its own
+  Doissetep-focused version of the same "a Hermetic stronghold falls
+  because of internal pride" story (see below) is structurally the
+  same cautionary shape repeated at a different Covenant, centuries
+  later.
 
-### The Technocracy's five Conventions, traced back to their own named ancestors
-- **m20-core** (Ch. 5, Part III) describes the five modern Technocratic
-  Conventions — Iteration X, New World Order, Progenitors, Syndicate,
-  Void Engineers — as settled fact, with only brief gestures at their
-  deeper history.
-- **mage-sorcerers-crusade** supplies the missing chapter: the Order of
-  Reason's 1325 founding roster (Ch. II, p.54-55) names **seven**
-  Conventions — Artificers, Cabal of Pure Thought/Gabrielites, Celestial
-  Masters, Craftmasons, High Guild, Hippocratic Circle, Void Seekers —
-  plus a secret eighth group, the Ksirafai ("Razors"), unlisted among
-  the Conventions. A single passage (Ch. V, p.142-143) then explicitly
-  narrates the consolidation into M20's familiar five: Artificers become
-  Iteration X; Celestial Masters absorb Void Seekers to become Void
-  Engineers; High Guild becomes the Syndicate; Hippocratic Circle
-  becomes the Progenitors; and the Cabal of Pure Thought's collapse,
-  alongside the Ksirafai's hidden hand, gives rise to the New World
-  Order.
-- This is presented in `mage-sorcerers-crusade` as connective lore
-  `m20-core` doesn't itself contain in this much depth, not as a
-  contradiction — a genuinely valuable case where reading both books
-  together produces a fuller picture than either alone.
-
-### A named character who ages across five centuries: Porthos Fitz-Empress
+### Porthos Fitz-Empress and Doissetep, across three books and roughly 550 years
+This is the single richest individual-character throughline in the
+library, now spanning all three narrative-driven books:
 - **mage-sorcerers-crusade** (Ch. II, p.56) places "young Porthos
   Fitz-Empress" at the 1448 Siege of Doissetep, where Hermetic magi
   shift the besieged Covenant into the Otherworlds to save it.
-- **m20-core** (Ch. 1, p.51) describes the same named Hermetic
-  Archmaster — now elderly and renowned — sacrificing his own life to
-  contain Doissetep's catastrophic implosion in 1997, roughly 550
-  fictional years later.
-- This is the single clearest individual-character throughline in the
-  library: the same named mage present at his stronghold's near-fall
-  as a young man, and its actual fall as an old one, confirmed in two
-  books written 17 years apart by overlapping authors.
+- **blood-treachery**, set roughly 550 years later, twice references
+  Doissetep's destruction and "the death of Porthos Fitz-Empress"
+  (Act One, p.19-20) as recent, already-settled history that has left
+  the Order — House Flambeau especially — reeling.
+- **m20-core** (Ch. 1, p.51) supplies the full account joining the two:
+  the same named Hermetic Archmaster, now elderly and renowned,
+  sacrifices his own life in 1997 to contain Doissetep's catastrophic
+  implosion — the exact event `blood-treachery` treats as recent past
+  only a few years later, and the far-future echo of the young man
+  present at the Covenant's near-fall in `mage-sorcerers-crusade`.
 
-### Otherworld cosmology: elaborated, not contradicted, over five centuries
-- **mage-sorcerers-crusade** (Ch. III, p.79) describes a three-layer
-  Otherworldly cosmology — the Penumbra, a middle layer called
-  **Veshaya**, and Horizon, collectively "L'umbra Haute," with the
-  Contrarium as its shadow-underside.
-- **m20-core** (Ch. 4) describes a considerably more elaborate system
-  — Penumbra, Astral/High Umbra, Middle Umbra, Low Umbra/Underworld,
-  Horizon, the Digital Web, and the Second Horizon/Etherspace — and
-  the term "Veshaya" does not appear to survive into M20's vocabulary
-  at all.
-- Read as five centuries of setting elaboration (and, per `m20-core`'s
-  own account, an Avatar Storm and Reckoning-era metaplot reshaping the
-  Otherworlds in between) rather than a contradiction — but don't
-  assume "Veshaya" means anything to an M20-only reader, and don't
-  assume M20's Digital Web or Second Horizon have any equivalent in
-  the Renaissance-era book.
+### The Council of Nine's membership: three data points across three centuries
+- **mage-sorcerers-crusade** dates the Council's 1466 founding roster
+  precisely, with **Ahl-i-Batin** and **Solificati** as two of the
+  original nine Traditions.
+- **blood-treachery** (Act One, p.21) adds a third data point from
+  roughly 2000: the Solificati's descendant Craft, **the Children of
+  Knowledge**, "surprised everyone" by formally rejoining the Order of
+  Hermes as its **tenth House**, resolving the 1500-era schism
+  `mage-sorcerers-crusade` documents.
+- **m20-core**, however — the *latest* retrospective account,
+  published 2015 — describes the Children of Knowledge as still an
+  independent **Disparate Craft**, not a House of the Order, with no
+  mention of the 2000-era reunification `blood-treachery` describes.
+  This is the clearest concrete case in this library of a Revised-era
+  metaplot development that M20's own retrospective simply did not
+  carry forward — worth flagging directly if a question turns on
+  Solificati/Children of Knowledge status, since the honest answer is
+  "it depends which book's continuity you're using," not a single
+  fixed fact.
+
+### Mechanics: Blood Treachery and m20-core share a lineage that Sorcerers Crusade doesn't
+- **blood-treachery** and **m20-core** use essentially the same core
+  systems — Paradox (not the Scourge), Quintessence, Gilgul, and the
+  same Nine Spheres — because both descend from the same
+  post-Revised-Edition rules lineage, 11 years apart.
+- **mage-sorcerers-crusade** is the outlier: its Scourge system (moral/
+  virtue-based backlash) is a genuinely different mechanic from
+  Paradox, not just an early or simplified version of it — see that
+  book's own `book_index.md` and the existing note on this below.
+- Practical implication: a rules question about Paradox, Quintessence
+  costs, or Sphere mechanics can usually be answered consistently from
+  either `blood-treachery` or `m20-core`; a rules question sourced
+  from `mage-sorcerers-crusade` needs its own Scourge-specific
+  treatment and shouldn't be assumed to carry over.
 
 ### Shared vocabulary roots, openly acknowledged
+(Carried forward from the two-book synthesis; still accurate.)
 Several `m20-core` terms are direct, traceable descendants of
-`mage-sorcerers-crusade` terminology, not independent coinages:
-- **Vain Magick** (`mage-sorcerers-crusade`, Introduction Lexicon, p.13)
-  → **Vulgar Magick** (`m20-core`).
-- **Casual Magick** (same Lexicon entry) → **Coincidental Magick**
-  (`m20-core`).
-- **Daemon** (`mage-sorcerers-crusade` Ch. I) → **Avatar** (`m20-core`)
-  — though the two books' four-part *Essence* taxonomies for that same
-  inner power don't match: Castellum/Furo/Mare/Susurro (four classical
-  elements, `mage-sorcerers-crusade`) versus Dynamic/Pattern/Questing/
-  Primordial (four archetypal drives, `m20-core`). Same structural idea
-  — a fourfold Essence typology — different specific system; don't
-  treat them as interchangeable.
-- **Gilgul**, **Quintessence**, **Tass**, **Resonance**, and the **Nine
-  Spheres**' governing principles (Correspondence/Connection, Entropy,
-  Forces, Life, Matter, Mind, Prime, Spirit, Time) are stable across
-  both books almost unchanged — these are the parts of the system that
-  genuinely didn't need updating.
+`mage-sorcerers-crusade` terminology: **Vain Magick** → **Vulgar
+Magick**; **Casual Magick** → **Coincidental Magick**; **Daemon** →
+**Avatar** (though the two books' Essence taxonomies for that inner
+power don't match — see `mage-sorcerers-crusade/book_index.md`).
+`blood-treachery` does not introduce comparably traceable new
+vocabulary of its own — its terms (**massasa** for vampires, the
+**Wizards' March** itself) appear to be local to the Revised-era
+Hermetic-vampire-war material and are not picked up in `m20-core`'s
+own text.
 
 ## Points of agreement
-- **Core chronology matches exactly where both books cover the same
-  event**: the Order of Hermes' founding (767 CE) and the Convention of
-  the White Tower founding the Order of Reason (1325) are dated
-  identically in both `mage-sorcerers-crusade` (Ch. II) and `m20-core`
-  (Ch. 5, Part I) — genuine cross-book consistency, not just thematic
-  echo.
-- **The Great Betrayer**: both books name the same individual, **Heylel
-  Teomim**, a Solificati representative, as the betrayer of the First
-  Cabal — `mage-sorcerers-crusade` (Ch. II, p.56-57) gives the full
-  1466-1470 event in detail; `m20-core` (Ch. 1, Ch. 5) references it as
-  established, centuries-old history.
+- **Core chronology matches exactly where books overlap**: the Order
+  of Hermes' founding (767 CE) and the Convention of the White Tower
+  (1325) match exactly between `mage-sorcerers-crusade` and `m20-core`
+  (see the prior two-book synthesis below); the Massasa War's rough
+  dating and Doissetep/Porthos Fitz-Empress's fate match across all
+  three narrative books (see above).
+- **`blood-treachery` and `m20-core` agree on every event they both
+  touch** — Doissetep's fall, Porthos's death, the general shape of
+  "the Order in crisis" — they simply differ in how *fixed* that
+  crisis is treated as being (see below).
 - **`m20-how-do-you-do-that` and `m20-core` remain in full agreement**
-  with each other (see that pair's existing synthesis below) — the
-  addition of `mage-sorcerers-crusade` doesn't change anything about
-  that relationship, since it's a different book entirely from a
-  different era.
+  with each other (see the existing pairwise note below) — unaffected
+  by either of the other two books' addition to this library.
 
 ## Points of disagreement or tension
-- **Council of Nine membership** (Ahl-i-Batin and Solificati as full
-  Traditions in `mage-sorcerers-crusade`'s 1466 vs. Disparate/departed
-  status in `m20-core`'s modern day) — see above; a dated turnover, not
-  a contradiction, but the single most practically important
-  divergence to flag if a question doesn't specify an era.
-- **The Scourge vs. Paradox** — see above; genuinely different game
-  mechanics (moral/virtue-based vs. consensus-based) even though
-  `m20-core` explicitly frames one as the historical predecessor of
-  the other.
-- **Avatar Essence taxonomy** (four classical elements vs. four
-  archetypal drives) — see above.
-- **Otherworld cosmology terminology** ("Veshaya" and the simpler
-  Three-Rings model vs. M20's much more elaborate multi-layer Umbra) —
-  see above.
+- **Solificati/Children of Knowledge's status** — full House of the
+  Order (`blood-treachery`, ~2000) vs. independent Disparate Craft
+  (`m20-core`, 2015) — see above. The clearest concrete continuity
+  break in this library.
+- **How fixed is "the Reckoning"/Doissetep's fall?** `blood-treachery`
+  (2004) treats these events as settled, non-optional canonical
+  history — it has no equivalent of M20's own "Future Fates" device.
+  `m20-core` (2015) explicitly reframes the *same* events as one of
+  three Storyteller-optional interpretations. Interestingly, the
+  "Future Fates" mechanic itself originates even earlier, in
+  `mage-sorcerers-crusade` (1998) — so the tool for making this era's
+  events optional existed years before `blood-treachery` was written,
+  but `blood-treachery` doesn't use it; only `m20-core`, later,
+  retroactively applies that same optionality to the era
+  `blood-treachery` treated as fixed.
+- **Council of Nine membership** and **the Scourge vs. Paradox** and
+  **Avatar Essence taxonomy** and **Otherworld cosmology terminology**
+  — all carried forward unchanged from the prior two-book synthesis;
+  see below and each book's own `book_index.md`.
 - **No disagreement identified between `m20-core` and
-  `m20-how-do-you-do-that`** — see that pair's existing note below;
-  this remains true regardless of what else is in the library.
+  `m20-how-do-you-do-that`** — unaffected by this update.
 
 ## Chronology / influence
-Fictional chronology and real-world publication order point in
-opposite directions here, and both matter:
-- **In fictional time**, `mage-sorcerers-crusade` (c. 1400s-1500s) comes
-  first by roughly five centuries; `m20-core` and
-  `m20-how-do-you-do-that` are set in the present day.
-- **In real-world publication order**, `mage-sorcerers-crusade` (1998)
-  predates `m20-core` (2015) by 17 years — meaning the "prequel" was
-  written first, and several of `m20-core`'s own devices (the Future
-  Fates sidebar mechanic, most visibly) were carried forward from it
-  rather than invented fresh.
+- **In fictional time**: `mage-sorcerers-crusade` (c. 1400s-1500s)
+  comes first by roughly five centuries; `blood-treachery` (~2000) and
+  `m20-core`/`m20-how-do-you-do-that` (present-day, written 2015) are
+  set within a few years of each other, in the same broad "post-
+  Doissetep, pre-Time-of-Judgment" period.
+- **In real-world publication order**: `mage-sorcerers-crusade` (1998)
+  → `blood-treachery` (2004) → `m20-core` and `m20-how-do-you-do-that`
+  (2015-2016). `m20-core` is the *latest* book in this library despite
+  being set in roughly the same period as `blood-treachery` — it is a
+  retrospective consolidation, not a sequel, and per the point above,
+  it doesn't treat everything `blood-treachery` describes as
+  automatically still true.
 - **Reading order recommendation**: start with `m20-core` for the
-  modern-day baseline (it's the line's flagship and best-documented
-  book), then read `mage-sorcerers-crusade` for the deep-history
-  version of the same setting — treat it as *Mage's* answer to Vampire:
-  The Dark Ages, not as a simpler early draft of `m20-core`.
-  `m20-how-do-you-do-that` only makes sense after `m20-core` (see
-  below) and has no real relationship to `mage-sorcerers-crusade` at
-  all — the two don't overlap in era or content.
+  modern-day baseline (best-documented, most current). Read
+  `mage-sorcerers-crusade` for the deep-history version of the same
+  setting. Read `blood-treachery` as a snapshot of how the modern-day
+  "Final Nights" period was being told *before* M20's retrospective
+  consolidation — useful for exactly the kind of "how did this
+  metaplot thread actually play out" questions M20 itself glosses
+  over, but treat any specific development it describes (like the
+  Solificati reunification) as belonging to that snapshot rather than
+  automatically true of `m20-core`'s own continuity unless confirmed
+  there too.
 
 ## m20-core and m20-how-do-you-do-that: existing pairwise notes
-(Retained from before `mage-sorcerers-crusade` was added — still fully
-accurate; that book doesn't change this relationship.)
+(Retained from the original two-book synthesis — still fully
+accurate; neither newer book changes this relationship.)
 
 `m20-how-do-you-do-that` is an explicit, subordinate companion to
 `m20-core`, by the same author, written to extend that book's Chapter
@@ -251,17 +246,25 @@ and `m20-how-do-you-do-that/book_index.md` for the full detail on each.
 
 ## Cross-book query examples
 ```bash
-python3 scripts/query_library.py m20-core/book_chunks.db mage-sorcerers-crusade/book_chunks.db "Doissetep"
+python3 scripts/query_library.py m20-core/book_chunks.db mage-sorcerers-crusade/book_chunks.db blood-treachery/book_chunks.db "Mistridge"
 ```
 ```bash
-python3 scripts/query_library.py m20-core/book_chunks.db mage-sorcerers-crusade/book_chunks.db "Ahl-i-Batin"
+python3 scripts/query_library.py m20-core/book_chunks.db blood-treachery/book_chunks.db "Porthos Fitz Empress"
 ```
 ```bash
-python3 scripts/query_library.py m20-core/book_chunks.db mage-sorcerers-crusade/book_chunks.db "Scourge Paradox"
+python3 scripts/query_library.py mage-sorcerers-crusade/book_chunks.db blood-treachery/book_chunks.db "Massasa War Tremere"
 ```
 ```bash
-python3 scripts/query_library.py m20-core/book_chunks.db m20-how-do-you-do-that/book_chunks.db "Quintessence"
+python3 scripts/query_library.py m20-core/book_chunks.db blood-treachery/book_chunks.db "Solificati Children of Knowledge"
 ```
 (Replace the slug paths with whichever subset of books is relevant to
 the question — the slug names shown above are what appears in the
 grouped results, so use them as written.)
+
+**A query-syntax gotcha worth knowing:** these scripts pass your query
+straight to SQLite FTS5, which gives special meaning to hyphens and
+apostrophes in unquoted multi-word queries (e.g. `Fitz-Empress` or
+`Wizards' March` can throw a syntax error rather than searching for
+that text). If a query errors out, drop the hyphen/apostrophe
+(`Fitz Empress`) or wrap the exact phrase in escaped double quotes
+(`'"Wizards March"'`) and try again.
