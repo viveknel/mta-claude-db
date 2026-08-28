@@ -3,9 +3,10 @@
 ## Books in this collection
 
 **M20 line** (20th Anniversary Edition, modern-day retrospective,
-published 2015-2016):
+published 2015-2017):
 - `m20-core/` — Mage: The Ascension 20th Anniversary Edition (core rulebook), 698 pages
 - `m20-how-do-you-do-that/` — Mage 20: How Do You DO That? — A Practical Guide to Sphere Magick, 143 pages
+- `m20-book-of-secrets/` — Mage 20: The Book of Secrets, 301 pages
 
 **Classic-era, 2nd Edition line** (Renaissance-setting, published 1998):
 - `mage-sorcerers-crusade/` — Mage: The Sorcerers Crusade, 317 pages
@@ -15,21 +16,27 @@ metaplot, published 2004):
 - `blood-treachery/` — Blood Treachery, 96 pages
 
 ## How to use this file
-This file synthesizes themes across the four books above. For
+This file synthesizes themes across the five books above. For
 details on any single book, read that book's own `book_index.md` in
 its subdirectory. For exact quotes/facts, query that book's
 `book_chunks.db`, or use `scripts/query_library.py` to search across
-all four databases at once (see usage below).
+all five databases at once (see usage below).
 
 ## A note on editions — read this before cross-referencing
 
 This library spans **three distinct editions/eras** of *Mage: The
 Ascension*, not one continuous canon:
 
-1. **M20** (`m20-core`, `m20-how-do-you-do-that`) — a 2015-2016
-   *20th Anniversary retrospective* line: a consolidated, updated
-   synthesis of modern-day Mage. `m20-how-do-you-do-that` is an
-   explicit, subordinate rules companion to `m20-core`.
+1. **M20** (`m20-core`, `m20-how-do-you-do-that`,
+   `m20-book-of-secrets`) — a 2015-2017 *20th Anniversary
+   retrospective* line: a consolidated, updated synthesis of
+   modern-day Mage. `m20-how-do-you-do-that` and
+   `m20-book-of-secrets` are both explicit, subordinate companions to
+   `m20-core` — the former a Sphere-magick rules expansion, the
+   latter a miscellany of cut material (character options, optional
+   rules, expanded Focus content, and a chapter on inter-faction
+   justice/influence). Neither introduces a competing continuity;
+   both assume and build on `m20-core`'s own.
 2. **Classic, 2nd Edition** (`mage-sorcerers-crusade`) — a 1998
    *prequel* sourcebook set roughly 500 years before the modern
    setting (Renaissance Europe), synced to the 1996 Second Edition
@@ -97,9 +104,10 @@ other books ultimately point back to.
   same cautionary shape repeated at a different Covenant, centuries
   later.
 
-### Porthos Fitz-Empress and Doissetep, across three books and roughly 550 years
+### Porthos Fitz-Empress and Doissetep, across four books and roughly 550 years
 This is the single richest individual-character throughline in the
-library, now spanning all three narrative-driven books:
+library, now spanning all three narrative-driven books plus a fourth,
+non-narrative cameo:
 - **mage-sorcerers-crusade** (Ch. II, p.56) places "young Porthos
   Fitz-Empress" at the 1448 Siege of Doissetep, where Hermetic magi
   shift the besieged Covenant into the Otherworlds to save it.
@@ -113,6 +121,48 @@ library, now spanning all three narrative-driven books:
   implosion — the exact event `blood-treachery` treats as recent past
   only a few years later, and the far-future echo of the young man
   present at the Covenant's near-fall in `mage-sorcerers-crusade`.
+- **m20-book-of-secrets** adds two small but genuine touches rather
+  than new narrative: its Introduction (p.11) opens with an unnamed
+  mage exploring ruins still saturated with "Archmaster Porthos"'s
+  lingering presence — an atmospheric coda consistent with, but not
+  adding facts to, `m20-core`'s account of his death — and its
+  Wonders chapter (p.163-164) attributes an in-setting Primer/game
+  called *Oracle: The Essence* to Porthos "by rumor," calling it
+  "Porthos' final enterprise" after his prior publication *The
+  Fragile Path* (itself a title shared with a real M20 sourcebook).
+  This is worldbuilding texture, not confirmed fact — the book itself
+  flags it as rumor. Separately, this book's own author FAQ (Chapter
+  Five, p.260) states in the author's voice that he has "never said
+  that... you must kill off Porthos or detonate Doissetep in your own
+  chronicle" — direct authorial confirmation that this entire
+  throughline is a Storyteller-optional "Future Fate," not
+  mandatory canon (see "Points of disagreement" below).
+
+### Voormas: a rumor in one book, a resolution in another
+- **m20-core** (Ch. 1, p.51, and Ch. 5's "Fallen Traditions?" sidebar,
+  p.140) raises Voormas only as an unresolved rumor: an infamous
+  "death-mage" whose name mages invoke as a cautionary example of
+  corruption, and one of the pieces of circumstantial evidence
+  offered (alongside Doissetep's implosion and the Ascension
+  Warrior) for the theory that Nephandi may have infiltrated the
+  Traditions' own leadership. The chapter deliberately leaves the
+  theory unconfirmed.
+- **m20-book-of-secrets** (Ch. 4, p.216, p.219) treats Voormas's
+  corruption as settled past history rather than live rumor: "the
+  atrocities of Voormas" are cited as the reason the Traditions no
+  longer let Thanatoic mages handle executions by default, and
+  Voormas and his rogue cabal are confirmed to have been formally
+  **Interdicted** (an in-absentia death sentence), then "hunted down
+  and destroyed by their fellow Euthanatoi."
+- **Practical implication:** read together, the two books tell a
+  clean before-and-after story — m20-core shows Voormas as a live
+  question mark used to fuel Fallen-infiltration paranoia, and
+  Book of Secrets confirms the case was eventually closed, with
+  consequences (changed Tradition execution customs) that persist
+  into the present day both books share. Book of Secrets does not
+  resolve the broader "are the Traditions secretly Nephandi-run?"
+  question m20-core raises — it only confirms this one specific,
+  named case.
 
 ### The Council of Nine's membership: three data points across three centuries
 - **mage-sorcerers-crusade** dates the Council's 1466 founding roster
@@ -176,6 +226,14 @@ own text.
 - **`m20-how-do-you-do-that` and `m20-core` remain in full agreement**
   with each other (see the existing pairwise note below) — unaffected
   by either of the other two books' addition to this library.
+- **`m20-book-of-secrets` and `m20-core` agree on every case they
+  both touch, and one of them (Voormas) moves from open rumor to
+  confirmed history** — see "Voormas" above. Book of Secrets also
+  shares `m20-core`'s and `blood-treachery`'s core mechanical
+  lineage outright: its Gilgul Rite, Wonder-crafting rules, and
+  Resonance system all use the same Paradox/Quintessence/Gilgul/Nine
+  Spheres framework, not `mage-sorcerers-crusade`'s Scourge-based one
+  (see "Mechanics" above).
 
 ## Points of disagreement or tension
 - **Solificati/Children of Knowledge's status** — full House of the
@@ -192,27 +250,38 @@ own text.
   events optional existed years before `blood-treachery` was written,
   but `blood-treachery` doesn't use it; only `m20-core`, later,
   retroactively applies that same optionality to the era
-  `blood-treachery` treated as fixed.
+  `blood-treachery` treated as fixed. `m20-book-of-secrets` (2017)
+  confirms this reading directly and in the author's own voice — its
+  Chapter Five FAQ states outright that Porthos's death, Doissetep's
+  fall, and even the Avatar Storm itself are deliberately left
+  Storyteller-optional so as not to force one "Reckoning vs. Avatar
+  Storm" camp's preferred metaplot onto the other (see "Porthos
+  Fitz-Empress and Doissetep" above).
 - **Council of Nine membership** and **the Scourge vs. Paradox** and
   **Avatar Essence taxonomy** and **Otherworld cosmology terminology**
   — all carried forward unchanged from the prior two-book synthesis;
   see below and each book's own `book_index.md`.
 - **No disagreement identified between `m20-core` and
-  `m20-how-do-you-do-that`** — unaffected by this update.
+  `m20-how-do-you-do-that`, or between `m20-core` and
+  `m20-book-of-secrets`** — unaffected by this update.
 
 ## Chronology / influence
 - **In fictional time**: `mage-sorcerers-crusade` (c. 1400s-1500s)
   comes first by roughly five centuries; `blood-treachery` (~2000) and
-  `m20-core`/`m20-how-do-you-do-that` (present-day, written 2015) are
-  set within a few years of each other, in the same broad "post-
-  Doissetep, pre-Time-of-Judgment" period.
+  `m20-core`/`m20-how-do-you-do-that`/`m20-book-of-secrets`
+  (present-day, written 2015-2017) are set within a few years of each
+  other, in the same broad "post-Doissetep, pre-Time-of-Judgment"
+  period. `m20-book-of-secrets` doesn't add new fictional-timeline
+  events of its own (its two short fiction vignettes are undated
+  mood pieces, not metaplot markers).
 - **In real-world publication order**: `mage-sorcerers-crusade` (1998)
-  → `blood-treachery` (2004) → `m20-core` and `m20-how-do-you-do-that`
-  (2015-2016). `m20-core` is the *latest* book in this library despite
-  being set in roughly the same period as `blood-treachery` — it is a
-  retrospective consolidation, not a sequel, and per the point above,
-  it doesn't treat everything `blood-treachery` describes as
-  automatically still true.
+  → `blood-treachery` (2004) → `m20-core` (2015) →
+  `m20-how-do-you-do-that` (2016) → `m20-book-of-secrets` (2017).
+  `m20-book-of-secrets` is the *newest* book in this library; it is a
+  companion/miscellany to `m20-core` (explicitly built from material
+  cut from that book) rather than a sequel or a rival retrospective,
+  and per the point above, its own author FAQ explicitly declines to
+  add new mandatory metaplot on top of `m20-core`'s.
 - **Reading order recommendation**: start with `m20-core` for the
   modern-day baseline (best-documented, most current). Read
   `mage-sorcerers-crusade` for the deep-history version of the same
@@ -223,7 +292,13 @@ own text.
   over, but treat any specific development it describes (like the
   Solificati reunification) as belonging to that snapshot rather than
   automatically true of `m20-core`'s own continuity unless confirmed
-  there too.
+  there too. Read `m20-book-of-secrets` last and treat it as
+  supplementary rather than foundational — it's the right place to
+  look for expanded character-creation options, optional rules
+  (Resonance, Wonder-crafting, certámen), inter-faction justice
+  systems, and the author's own design commentary, but it assumes
+  `m20-core`'s setting throughout and doesn't stand alone the way the
+  other four books do.
 
 ## m20-core and m20-how-do-you-do-that: existing pairwise notes
 (Retained from the original two-book synthesis — still fully
@@ -244,6 +319,17 @@ introduced as cosmology in `m20-core` and operationalized as granular
 mechanics in `m20-how-do-you-do-that` — see `m20-core/book_index.md`
 and `m20-how-do-you-do-that/book_index.md` for the full detail on each.
 
+`m20-book-of-secrets` uses the same shared cast far more lightly: Lee
+Ann Milner turns up twice, both times as a generic stand-in name in
+rules-example text (a hypothetical Time-Sphere Effect, p.273; a
+hypothetical torture victim used to illustrate that Ordeal punishments
+on prominent mages won't stay "internal," p.217) rather than as a
+worked-example character in her own right — this book has its own
+separate cast of six original Examples in Play characters for that
+purpose (see its own `book_index.md`). The connection is real but
+thin; don't expect Book of Secrets to develop Lee Ann's arc the way
+`m20-how-do-you-do-that` does.
+
 ## Cross-book query examples
 ```bash
 python3 scripts/query_library.py m20-core/book_chunks.db mage-sorcerers-crusade/book_chunks.db blood-treachery/book_chunks.db "Mistridge"
@@ -256,6 +342,9 @@ python3 scripts/query_library.py mage-sorcerers-crusade/book_chunks.db blood-tre
 ```
 ```bash
 python3 scripts/query_library.py m20-core/book_chunks.db blood-treachery/book_chunks.db "Solificati Children of Knowledge"
+```
+```bash
+python3 scripts/query_library.py m20-core/book_chunks.db m20-book-of-secrets/book_chunks.db "Voormas"
 ```
 (Replace the slug paths with whichever subset of books is relevant to
 the question — the slug names shown above are what appears in the

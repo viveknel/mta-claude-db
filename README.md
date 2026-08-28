@@ -8,12 +8,13 @@ on top for questions that span multiple books.
 
 ## What's in here
 
-**M20 line** (20th Anniversary Edition, modern-day, 2015-2016):
+**M20 line** (20th Anniversary Edition, modern-day, 2015-2017):
 
 | Book | Folder | Pages |
 |---|---|---|
 | Mage: The Ascension 20th Anniversary Edition (core rulebook) | `m20-core/` | 698 |
 | Mage 20: How Do You DO That? — A Practical Guide to Sphere Magick | `m20-how-do-you-do-that/` | 143 |
+| Mage 20: The Book of Secrets | `m20-book-of-secrets/` | 301 |
 
 **Classic era, 2nd Edition line** (Renaissance-setting, 1998):
 
@@ -32,7 +33,7 @@ on top for questions that span multiple books.
 ├── README.md                       ← you are here
 ├── library_index.md                 ← cross-book synthesis (read for broad/comparative questions)
 ├── scripts/
-│   └── query_library.py             ← search all four books' databases at once
+│   └── query_library.py             ← search all five books' databases at once
 ├── m20-core/
 │   ├── book_index.md                ← thematic index (read this for broad questions about this book)
 │   ├── book_chunks.db               ← full-text search database
@@ -40,6 +41,12 @@ on top for questions that span multiple books.
 │   └── scripts/
 │       └── query_chunks.py          ← search this book's database alone
 ├── m20-how-do-you-do-that/
+│   ├── book_index.md
+│   ├── book_chunks.db
+│   ├── README.md
+│   └── scripts/
+│       └── query_chunks.py
+├── m20-book-of-secrets/
 │   ├── book_index.md
 │   ├── book_chunks.db
 │   ├── README.md
@@ -68,9 +75,10 @@ README explaining how.
 This library spans **three distinct editions/eras**, not one
 continuous canon:
 
-- `m20-core` and `m20-how-do-you-do-that` are the **M20 line** —
-  modern-day-set, 2015-2016, and `m20-how-do-you-do-that` is an
-  explicit, subordinate rules companion to `m20-core`.
+- `m20-core`, `m20-how-do-you-do-that`, and `m20-book-of-secrets` are
+  the **M20 line** — modern-day-set, 2015-2017, and the latter two
+  are explicit, subordinate companions to `m20-core` (a Sphere-magick
+  rules expansion and a miscellany of cut material, respectively).
 - `mage-sorcerers-crusade` is a **classic-era, 2nd Edition book from
   1998**, set roughly 500 years earlier in the same fictional world
   (Renaissance Europe) — fully standalone.
@@ -83,9 +91,12 @@ continuous canon:
 See `library_index.md` for the full picture — it documents both
 genuine connections (a named character who appears young in one book
 and dies decades later in another, confirmed across all three
-narrative books; the exact same "Massasa War" referenced by name 800
-years apart; the literal origin of the "Future Fates" mechanic) and
-genuine differences (a Solificati/Children of Knowledge plot
+narrative books, with a fourth book adding atmospheric texture and
+the author's own confirmation that this throughline is optional; the
+exact same "Massasa War" referenced by name 800 years apart; a named
+rogue mage who's an open rumor in one book and a confirmed, resolved
+case in another; the literal origin of the "Future Fates" mechanic)
+and genuine differences (a Solificati/Children of Knowledge plot
 development in `blood-treachery` that `m20-core`'s own later
 retrospective doesn't carry forward; the Scourge and Paradox are
 different game mechanics; Avatar Essence types don't share a
@@ -110,6 +121,7 @@ query that book's chunk database directly:
 ```bash
 python3 m20-core/scripts/query_chunks.py m20-core/book_chunks.db "Doissetep"
 python3 blood-treachery/scripts/query_chunks.py blood-treachery/book_chunks.db "Wizards' March"
+python3 m20-book-of-secrets/scripts/query_chunks.py m20-book-of-secrets/book_chunks.db "Voormas"
 ```
 
 **Search across multiple books at once**:
@@ -127,11 +139,12 @@ punctuation or wrap the phrase in escaped double quotes and retry.
 
 **Note on page numbers:** every book's PDF has a small front-matter
 offset between the PDF's own page count and the book's printed page
-footers (+1 for `m20-core`, `m20-how-do-you-do-that`, and
-`blood-treachery`; +19 for `mage-sorcerers-crusade`, which opens with
-an unnumbered 16-page fiction Prelude). See each book's own README.md
-for its exact offset — this matters if you're cross-referencing
-against a physical/PDF copy rather than just this bundle.
+footers (+1 for `m20-core`, `m20-how-do-you-do-that`,
+`m20-book-of-secrets`, and `blood-treachery`; +19 for
+`mage-sorcerers-crusade`, which opens with an unnumbered 16-page
+fiction Prelude). See each book's own README.md for its exact offset
+— this matters if you're cross-referencing against a physical/PDF
+copy rather than just this bundle.
 
 ## Requirements
 
